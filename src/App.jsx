@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import Header from './Components/Header.jsx'
 import Account from './Components/Account.jsx'
 import Feed from './Components/Feed.jsx'
@@ -18,6 +18,8 @@ function App() {
   const [userAccount, setUserAccount] = useState(null) // Usuario harcodeado
   const [actualAccount, setActualAccount] = useState(null) // Cuenta visual
   const [feedPosts, setFeedPosts] = useState([])
+
+  const UserContext = createContext({})
 
   const BuscarUsuario = async () => {
     const acc = {}
@@ -89,17 +91,19 @@ function App() {
       </header>}
 
       {userAccount != null && <main>
-        <section className="LeftBar">
-          <Account Account={actualAccount} userAccount={userAccount} ViewPost={ViewPost} />
-        </section>
+        <UserContext.Provider value={userAccount}>
+          <section className="LeftBar">
+            <Account Account={actualAccount} ViewPost={ViewPost} />
+          </section>
+        </UserContext.Provider>
 
 
-        {viewingPost == null &&<section className="RightBar">
-           <Feed postsData={feedPosts} ViewPost={ViewPost} />
+        {viewingPost == null && <section className="RightBar">
+          <Feed postsData={feedPosts} ViewPost={ViewPost} />
         </section>}
 
         {viewingPost != null && <section className="SectionBigPost">
-           <BigPost postData={viewingPost} />
+          <BigPost postData={viewingPost} />
         </section>}
 
       </main>}
