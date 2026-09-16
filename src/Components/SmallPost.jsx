@@ -1,13 +1,16 @@
-//
+import { useContext } from "react";
 
 function SmallPost(props){
 
+    const account = useContext(ViewingUserContext);
+
+
     return(
-        <div className="SmallPost" onClick={()=>props.ViewPost(props.postImg, props.accountImg, props.accountName)}>
-            <img src={props.postImg} id="miniPostImg"/>
+        <div className="SmallPost" onClick={()=>props.ViewPost(account.postImg, account.accountImg, account.accountName)}>
+            <img src={account.postImg} id="miniPostImg"/>
             <div>
-                <img src={props.accountImg} id="miniAccImg"/>
-                <p>@{props.accountName}</p>
+                <img src={account.accountImg} id="miniAccImg"/>
+                <p>@{account.accountName}</p>
             </div>
         </div>
     )

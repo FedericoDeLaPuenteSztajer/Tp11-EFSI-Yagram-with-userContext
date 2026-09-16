@@ -19,7 +19,7 @@ function App() {
   const [viewingAccount, setViewingAccount] = useState(null) // Cuenta visual
   const [feedPosts, setFeedPosts] = useState([])
 
-  const ViewingUserContext = createContext({})
+  const ViewingUserContext = createContext()
 
   const BuscarUsuario = async () => {
     const acc = {}
