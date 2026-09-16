@@ -16,10 +16,10 @@ function App() {
 
   const [viewingPost, setViewingPost] = useState(null)
   const [userAccount, setUserAccount] = useState(null) // Usuario harcodeado
-  const [actualAccount, setActualAccount] = useState(null) // Cuenta visual
+  const [viewingAccount, setViewingAccount] = useState(null) // Cuenta visual
   const [feedPosts, setFeedPosts] = useState([])
 
-  const UserContext = createContext({})
+  const ViewingUserContext = createContext({})
 
   const BuscarUsuario = async () => {
     const acc = {}
@@ -57,7 +57,7 @@ function App() {
   const GoHome = async () => {
     setViewingPost(null);
     GenerateFeed();
-    setActualAccount(userAccount);
+    setViewingAccount(userAccount);
   }
 
   const ViewPost = async (postImg, accountImg, accountName) => {
@@ -76,7 +76,7 @@ function App() {
     acc["name"] = accountName
     acc["img"] = accountImg
 
-    setActualAccount(acc);
+    setViewingAccount(acc);
   }
 
   const Login = async () => {
@@ -91,11 +91,11 @@ function App() {
       </header>}
 
       {userAccount != null && <main>
-        <UserContext.Provider value={userAccount}>
+        <ViewingUserContext.Provider value={viewingAccount}>
           <section className="LeftBar">
-            <Account Account={actualAccount} ViewPost={ViewPost} />
+            <Account userAccount={userAccount} ViewPost={ViewPost} />
           </section>
-        </UserContext.Provider>
+        </ViewingUserContext.Provider>
 
 
         {viewingPost == null && <section className="RightBar">

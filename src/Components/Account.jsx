@@ -28,17 +28,3 @@ function Account(props) {
 }
 
 export default Account;
-
-/**
-Requisitos:
-- Nombre de usuario.
-- Foto de perfil.
-- Biografía breve.
-
-- Cantidad de publicaciones.
-- Cantidad de seguidores.
-- Cantidad de seguidos.
-
-- Publicaciones asociadas al perfil.
-- Botón visual de editar perfil o configuración.
- */
