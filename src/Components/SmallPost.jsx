@@ -1,5 +1,7 @@
 import { useContext } from "react";
 
+import ViewingUserContext from "../Context/ViewingUserContext.jsx"
+
 function SmallPost(props){
 
     const account = useContext(ViewingUserContext);

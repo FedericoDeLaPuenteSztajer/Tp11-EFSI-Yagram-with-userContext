@@ -1,11 +1,12 @@
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect} from 'react'
+
 import Header from './Components/Header.jsx'
 import Account from './Components/Account.jsx'
 import Feed from './Components/Feed.jsx'
 import catApi from './Modules/TheCatApi.jsx'
 import BigPost from './Components/BigPost.jsx'
-//Random entre 0 y 10 => Math.floor(Math.random() * 11) 
-//El ultimo no se incluye
+
+import ViewingUserContext from "./Context/ViewingUserContext.jsx";
 
 function App() {
   //Harcodeado
@@ -18,8 +19,6 @@ function App() {
   const [userAccount, setUserAccount] = useState(null) // Usuario harcodeado
   const [viewingAccount, setViewingAccount] = useState(null) // Cuenta visual
   const [feedPosts, setFeedPosts] = useState([])
-
-  const ViewingUserContext = createContext()
 
   const BuscarUsuario = async () => {
     const acc = {}

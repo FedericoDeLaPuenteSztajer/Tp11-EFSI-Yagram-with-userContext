@@ -1,10 +1,11 @@
 import { useContext } from 'react';
+
 import SmallPost from './SmallPost.jsx'
-import ViewingUserData from "./ViewingUserContext"
+import ViewingUserContext from "../Context/ViewingUserContext.jsx"
 
 function Account(props) {
 
-    const account = useContext(ViewingUserData);
+    const account = useContext(ViewingUserContext);
 
     return (
          <>
