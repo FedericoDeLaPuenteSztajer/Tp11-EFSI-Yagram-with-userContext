@@ -57,6 +57,7 @@ function App() {
     setViewingPost(null);
     GenerateFeed();
     setViewingAccount(userAccount);
+    console.log(viewingAccount)
   }
 
   const ViewPost = async (postImg, accountImg, accountName) => {
