@@ -6,10 +6,11 @@ function SmallPost(props){
 
     const account = useContext(ViewingUserContext);
 
+          {console.log(account)}
 
     return(
         <>
-        {account &&
+        {(account) &&
         <div className="SmallPost" onClick={()=>props.ViewPost(account.postImg, account.accountImg, account.accountName)}>
             <img src={account.postImg} id="miniPostImg"/>
             <div>

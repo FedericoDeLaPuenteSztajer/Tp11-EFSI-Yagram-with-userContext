@@ -24,7 +24,7 @@ function Account(props) {
                 </ul>
 
                 {/** Simulador de posts */}
-                <SmallPost ViewPost={props.ViewPost} />
+                <SmallPost ViewPost={props.ViewPost}/>
             </div>}
         </>
     )

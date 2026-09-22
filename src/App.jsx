@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 import Header from './Components/Header.jsx'
 import Account from './Components/Account.jsx'
@@ -57,7 +57,6 @@ function App() {
     setViewingPost(null);
     GenerateFeed();
     setViewingAccount(userAccount);
-    console.log(viewingAccount)
   }
 
   const ViewPost = async (postImg, accountImg, accountName) => {
@@ -92,6 +91,7 @@ function App() {
 
       {userAccount != null && <main>
         <ViewingUserContext.Provider value={viewingAccount}>
+          {console.log(viewingAccount)}
           <section className="LeftBar">
             <Account userAccount={userAccount} ViewPost={ViewPost} />
           </section>
