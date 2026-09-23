@@ -89,24 +89,26 @@ function App() {
         <Header GoHome={GoHome} />
       </header>}
 
-      {userAccount != null && <main>
-        <ViewingUserContext.Provider value={viewingAccount}>
-          {console.log(viewingAccount)}
-          <section className="LeftBar">
-            <Account userAccount={userAccount} ViewPost={ViewPost} />
-          </section>
-        </ViewingUserContext.Provider>
+      {userAccount != null &&
+        <main>
+          <ViewingUserContext.Provider value={viewingAccount}>
+            {console.log(viewingAccount)}
+            <section className="LeftBar">
+              <Account userAccount={userAccount} ViewPost={ViewPost} />
+            </section>
+          </ViewingUserContext.Provider>
 
 
-        {viewingPost == null && <section className="RightBar">
-          <Feed postsData={feedPosts} ViewPost={ViewPost} />
-        </section>}
+          {viewingPost == null && <section className="RightBar">
+            <Feed postsData={feedPosts} ViewPost={ViewPost} />
+          </section>}
 
-        {viewingPost != null && <section className="SectionBigPost">
-          <BigPost postData={viewingPost} />
-        </section>}
+          {viewingPost != null && <section className="SectionBigPost">
+            <BigPost postData={viewingPost} />
+          </section>}
 
-      </main>}
+        </main>
+        }
 
       {userAccount == null &&
         <main className='login'><button onClick={() => Login()} >Iniciar Sesion</button></main>

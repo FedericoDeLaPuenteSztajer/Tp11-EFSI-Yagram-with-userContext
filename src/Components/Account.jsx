@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-
+//
 import SmallPost from './SmallPost.jsx'
 import ViewingUserContext from "../Context/ViewingUserContext.jsx"
 
@@ -24,7 +24,7 @@ function Account(props) {
                 </ul>
 
                 {/** Simulador de posts */}
-                <SmallPost ViewPost={props.ViewPost}/>
+                <SmallPost ViewPost={props.ViewPost} postImg={data.postImg}/>
             </div>}
         </>
     )

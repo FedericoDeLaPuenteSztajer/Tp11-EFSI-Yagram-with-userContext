@@ -1,5 +1,3 @@
-//
-
 import SmallPost from "./SmallPost";
 
 function Feed(props){
