@@ -10,15 +10,15 @@ function SmallPost(props) {
 
     return (
         <>
-            {(account) &&
-                <div className="SmallPost" onClick={() => props.ViewPost(props.postImg, account.accountImg, account.accountName)}>
+            {(account) ?
+                <div className="SmallPost" onClick={() => props.ViewPost(account.firstPostImg, account.accountImg, account.accountName)}>
                     <img src={account.postImg} id="miniPostImg" />
                     <div>
                         <img src={account.accountImg} id="miniAccImg" />
                         <p>@{account.accountName}</p>
                     </div>
-                </div>}
-            :{
+                </div>
+            :
                 <div className="SmallPost" onClick={() => props.ViewPost(props.postImg, props.accountImg, props.accountName)}>
                     <img src={props.postImg} id="miniPostImg" />
                     <div>
